@@ -17,6 +17,7 @@ namespace TaleworldsProductSerialKeyVerifier
         private Scenario scenario;
         private ModProfile profile;
         private BackgroundWorker worker;
+        private string serverIP;
         public frmVerifier(Scenario scenario, ModProfile profile)
         {
             InitializeComponent();
@@ -33,9 +34,19 @@ namespace TaleworldsProductSerialKeyVerifier
                 txtSerialKeyTuple3.Text,
                 txtSerialKeyTuple4.Text);
 
+            switch(scenario)
+            {
+                case Scenario.nw:
+                    serverIP = "213.202.240.107:8210";
+                    break;
+                case Scenario.wfas:
+                    serverIP = "195.2.84.212";
+                    break;
+            }
+
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("http://warbandmain.taleworlds.com/handlerservers.ashx?type=chkserial&serial={0}&ip=127.0.0.1&gametype={1}",
-               serialKey, scenario.ToString()));
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("http://warbandmain.taleworlds.com/handlerservers.ashx?type=chkserial&serial={0}&ip={1}&gametype={2}",
+               serialKey, serverIP, scenario.ToString()));
             request.UserAgent = "UserAgent";
             var response = request.GetResponse();
             var stream = response.GetResponseStream();
