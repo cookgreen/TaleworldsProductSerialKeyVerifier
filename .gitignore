@@ -1,0 +1,11 @@
+.vs/*
+*.exe
+*.exe.config
+*.dll
+*.pdb
+*.xml
+*.cache
+*.user
+*/bin/*
+*/obj/*
+obj/*
