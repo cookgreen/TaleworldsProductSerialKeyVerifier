@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVerifier));
             this.txtSerialKeyTuple1 = new System.Windows.Forms.TextBox();
             this.txtSerialKeyTuple2 = new System.Windows.Forms.TextBox();
             this.txtSerialKeyTuple3 = new System.Windows.Forms.TextBox();
@@ -120,6 +121,7 @@
             this.Controls.Add(this.txtSerialKeyTuple3);
             this.Controls.Add(this.txtSerialKeyTuple2);
             this.Controls.Add(this.txtSerialKeyTuple1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmVerifier";
