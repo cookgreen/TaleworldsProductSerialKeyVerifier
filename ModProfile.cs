@@ -13,6 +13,8 @@ namespace TaleworldsProductSerialKeyVerifier
         public string Name { get; set; }
         public string DisplayName { get; set; }
         public string ModID { get; set; }
+        public Scenario RequireDLC { get; set; }
+        public string Key { get; set; }
 
         public ModProfile(string profileFullPath, string gameRunPath)
         {
@@ -43,6 +45,12 @@ namespace TaleworldsProductSerialKeyVerifier
                             break;
                         case "ModID":
                             ModID = tokens[1].Trim();
+                            break;
+                        case "RequireDLC":
+                            RequireDLC = (Scenario)Enum.Parse(typeof(Scenario), tokens[1].Trim());
+                            break;
+                        case "Key":
+                            Key = tokens[1].Trim();
                             break;
                     }
                 }
