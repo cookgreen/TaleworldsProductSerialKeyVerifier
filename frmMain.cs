@@ -51,7 +51,7 @@ namespace TaleworldsProductSerialKeyVerifier
             }
             else
             {
-                frmProfileSelect frmProfileSelect = new frmProfileSelect();
+                frmProfileSelect frmProfileSelect = new frmProfileSelect(scenario);
                 if (frmProfileSelect.ShowDialog() == DialogResult.OK)
                 {
                     var profile = frmProfileSelect.SelectedProfile;

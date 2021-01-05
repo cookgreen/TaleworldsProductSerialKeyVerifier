@@ -34,7 +34,15 @@ namespace TaleworldsProductSerialKeyVerifier
             }
             else
             {
-                Application.Run(new frmMain());
+                if (ModProfileManager.Instance.Profiles.Count == 1)
+                {
+                    var profile = ModProfileManager.Instance.Profiles[0];
+                    Application.Run(new frmVerifier(profile.RequireDLC, profile));
+                }
+                else
+                {
+                    Application.Run(new frmMain());
+                }
             }
         }
     }
