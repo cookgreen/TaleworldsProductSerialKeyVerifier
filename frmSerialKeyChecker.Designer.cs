@@ -1,6 +1,6 @@
 ﻿namespace TaleworldsProductSerialKeyVerifier
 {
-    partial class frmVerifier
+    partial class frmSerialKeyChecker
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVerifier));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSerialKeyChecker));
             this.txtSerialKeyTuple1 = new System.Windows.Forms.TextBox();
             this.txtSerialKeyTuple2 = new System.Windows.Forms.TextBox();
             this.txtSerialKeyTuple3 = new System.Windows.Forms.TextBox();

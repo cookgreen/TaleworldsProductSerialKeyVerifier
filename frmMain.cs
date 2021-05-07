@@ -46,7 +46,7 @@ namespace TaleworldsProductSerialKeyVerifier
         {
             if (ModProfileManager.Instance.Profiles.Count == 1)
             {
-                frmVerifier frmVerifier = new frmVerifier(scenario, ModProfileManager.Instance.Profiles[0]);
+                frmSerialKeyChecker frmVerifier = new frmSerialKeyChecker(scenario, ModProfileManager.Instance.Profiles[0]);
                 frmVerifier.ShowDialog();
             }
             else
@@ -55,7 +55,7 @@ namespace TaleworldsProductSerialKeyVerifier
                 if (frmProfileSelect.ShowDialog() == DialogResult.OK)
                 {
                     var profile = frmProfileSelect.SelectedProfile;
-                    frmVerifier frmVerifier = new frmVerifier(scenario, profile);
+                    frmSerialKeyChecker frmVerifier = new frmSerialKeyChecker(scenario, profile);
                     frmVerifier.ShowDialog();
                 }
             }

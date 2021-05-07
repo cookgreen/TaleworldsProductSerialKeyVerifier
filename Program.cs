@@ -25,7 +25,7 @@ namespace TaleworldsProductSerialKeyVerifier
                 var profile = ModProfileManager.Instance.Profiles.Where(o => o.Name == profileID).FirstOrDefault();
                 if (profile != null)
                 {
-                    Application.Run(new frmVerifier(scenario, profile));
+                    Application.Run(new frmSerialKeyChecker(scenario, profile));
                 }
                 else
                 {
@@ -37,7 +37,7 @@ namespace TaleworldsProductSerialKeyVerifier
                 if (ModProfileManager.Instance.Profiles.Count == 1)
                 {
                     var profile = ModProfileManager.Instance.Profiles[0];
-                    Application.Run(new frmVerifier(profile.RequireDLC, profile));
+                    Application.Run(new frmSerialKeyChecker(profile.RequireDLC, profile));
                 }
                 else
                 {

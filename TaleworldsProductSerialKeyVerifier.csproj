@@ -49,12 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeyChecker.cs" />
     <Compile Include="frmProfileSelect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProfileSelect.Designer.cs">
       <DependentUpon>frmProfileSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="MBServerInfo.cs" />
+    <Compile Include="MBServerInfoFetcher.cs" />
     <Compile Include="ModProfile.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -62,11 +65,11 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVerifier.cs">
+    <Compile Include="frmSerialKeyChecker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVerifier.Designer.cs">
-      <DependentUpon>frmVerifier.cs</DependentUpon>
+    <Compile Include="frmSerialKeyChecker.Designer.cs">
+      <DependentUpon>frmSerialKeyChecker.cs</DependentUpon>
     </Compile>
     <Compile Include="ModProfileManager.cs" />
     <Compile Include="Program.cs" />
@@ -77,8 +80,8 @@
     <EmbeddedResource Include="frmProfileSelect.resx">
       <DependentUpon>frmProfileSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVerifier.resx">
-      <DependentUpon>frmVerifier.cs</DependentUpon>
+    <EmbeddedResource Include="frmSerialKeyChecker.resx">
+      <DependentUpon>frmSerialKeyChecker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

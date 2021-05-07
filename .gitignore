@@ -8,4 +8,5 @@
 *.user
 */bin/*
 */obj/*
+bin/*
 obj/*
