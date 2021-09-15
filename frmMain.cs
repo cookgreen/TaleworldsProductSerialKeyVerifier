@@ -21,44 +21,29 @@ namespace TaleworldsProductSerialKeyVerifier
         private void btnStartWarbandVerifier_Click(object sender, EventArgs e)
         {
             scenario = Scenario.warband;
-            SearchProfileAndLoadVerifier();
+            frmSerialKeyChecker frmVerifier = new frmSerialKeyChecker(scenario);
+            frmVerifier.ShowDialog();
         }
 
         private void btnStartWFaSVerifier_Click(object sender, EventArgs e)
         {
             scenario = Scenario.wfas;
-            SearchProfileAndLoadVerifier();
+            frmSerialKeyChecker frmVerifier = new frmSerialKeyChecker(scenario);
+            frmVerifier.ShowDialog();
         }
 
         private void btnStartNapoleonVerifier_Click(object sender, EventArgs e)
         {
             scenario = Scenario.nw;
-            SearchProfileAndLoadVerifier();
+            frmSerialKeyChecker frmVerifier = new frmSerialKeyChecker(scenario);
+            frmVerifier.ShowDialog();
         }
 
         private void btnStartVikingConquestVerifier_Click(object sender, EventArgs e)
         {
             scenario = Scenario.vc;
-            SearchProfileAndLoadVerifier();
-        }
-
-        private void SearchProfileAndLoadVerifier()
-        {
-            if (ModProfileManager.Instance.Profiles.Count == 1)
-            {
-                frmSerialKeyChecker frmVerifier = new frmSerialKeyChecker(scenario, ModProfileManager.Instance.Profiles[0]);
-                frmVerifier.ShowDialog();
-            }
-            else
-            {
-                frmProfileSelect frmProfileSelect = new frmProfileSelect(scenario);
-                if (frmProfileSelect.ShowDialog() == DialogResult.OK)
-                {
-                    var profile = frmProfileSelect.SelectedProfile;
-                    frmSerialKeyChecker frmVerifier = new frmSerialKeyChecker(scenario, profile);
-                    frmVerifier.ShowDialog();
-                }
-            }
+            frmSerialKeyChecker frmVerifier = new frmSerialKeyChecker(scenario);
+            frmVerifier.ShowDialog();
         }
     }
 }

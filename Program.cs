@@ -16,33 +16,16 @@ namespace TaleworldsProductSerialKeyVerifier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            ModProfileManager.Instance.LoadAll();
+
             var argList = args.ToList();
-            if (argList.Contains("-scenario") && argList.Contains("-profile") && argList.Count == 4)
+            if (argList.Contains("-scenario") && argList.Count == 2)
             {
                 Scenario scenario = (Scenario)Enum.Parse(typeof(Scenario), argList[1]);
-                string profileID = argList[3];
-                var profile = ModProfileManager.Instance.Profiles.Where(o => o.Name == profileID).FirstOrDefault();
-                if (profile != null)
-                {
-                    Application.Run(new frmSerialKeyChecker(scenario, profile));
-                }
-                else
-                {
-                    Application.Run(new frmMain());
-                }
+                Application.Run(new frmSerialKeyChecker(scenario));
             }
             else
             {
-                if (ModProfileManager.Instance.Profiles.Count == 1)
-                {
-                    var profile = ModProfileManager.Instance.Profiles[0];
-                    Application.Run(new frmSerialKeyChecker(profile.RequireDLC, profile));
-                }
-                else
-                {
-                    Application.Run(new frmMain());
-                }
+                Application.Run(new frmMain());
             }
         }
     }

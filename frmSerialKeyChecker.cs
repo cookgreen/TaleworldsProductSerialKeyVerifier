@@ -17,27 +17,15 @@ namespace TaleworldsProductSerialKeyVerifier
     public partial class frmSerialKeyChecker : Form
     {
         private Scenario scenario;
-        private ModProfile profile;
         private KeyChecker keyChecker;
 
-        public frmSerialKeyChecker(Scenario scenario, ModProfile profile)
+        public frmSerialKeyChecker(Scenario scenario)
         {
             InitializeComponent();
             this.scenario = scenario;
-            this.profile = profile;
-            Text += " - " + profile.DisplayName;
 
             keyChecker = new KeyChecker(3, scenario);
             keyChecker.KeyOnlineCheckFinished += KeyChecker_KeyOnlineCheckFinished;
-
-            if (keyChecker.Check(profile.Key))
-            {
-                string[] tokens = profile.Key.Split('-');
-                txtSerialKeyTuple1.Text = tokens[0];
-                txtSerialKeyTuple2.Text = tokens[1];
-                txtSerialKeyTuple3.Text = tokens[2];
-                txtSerialKeyTuple4.Text = tokens[3];
-            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -73,7 +61,6 @@ namespace TaleworldsProductSerialKeyVerifier
             else
             {
                 MessageBox.Show("Verify success!");
-                profile.Start();
             }
         }
 
